@@ -1,5 +1,5 @@
 name: beep_player
-description: A plugin for playing short sound asset file
+description: A plugin for playing short audio asset file
 version: 0.0.1
 repository: https://www.github.com/iandis/beep_player
 issue_tracker: https://www.github.com/iandis/beep_player/issues
