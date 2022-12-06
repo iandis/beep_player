@@ -24,8 +24,13 @@ class BeepPlayer : NSObject, AVAudioPlayerDelegate {
     
     private var _audioPlayers: [String:AVAudioPlayer] = [:]
     private var _activeAudioPlayer: AVAudioPlayer?
+    private var _isAudioSessionInitialized: Bool = false
     
     func initAudioSession() {
+        if _isAudioSessionInitialized {
+            return
+        }
+        _isAudioSessionInitialized = true
         do {
             try AVAudioSession.sharedInstance().setCategory(.ambient, mode: .default, options: .mixWithOthers)
             try AVAudioSession.sharedInstance().setActive(true)
