@@ -26,12 +26,14 @@ class BeepPlayer(
     private var _isDisposed: Boolean = false
 
     init {
-        _soundPool.setOnLoadCompleteListener { _, soundId: Int, status: Int ->
-            if (status != 0) {
-                Log.d(this::class.java.simpleName, "Failed to load sound id: $soundId")
-                return@setOnLoadCompleteListener
+        if (BuildConfig.DEBUG) {
+            _soundPool.setOnLoadCompleteListener { _, soundId: Int, status: Int ->
+                if (status != 0) {
+                    Log.d(this::class.java.simpleName, "Failed to load sound id: $soundId")
+                    return@setOnLoadCompleteListener
+                }
+                Log.d(this::class.java.simpleName, "Successfully loaded sound id: $soundId")
             }
-            Log.d(this::class.java.simpleName, "Successfully loaded sound id: $soundId")
         }
     }
 
