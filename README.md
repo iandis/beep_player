@@ -10,7 +10,7 @@ On iOS, this uses the `AVAudioPlayer` API, with audio category set to
 ## Getting Started
 
 Before any calls to `BeepPlayer.play`, the audio file needs to be loaded first
-using `BeepPlayer.load`, otherwise it will silently fails. Don't forget to unload it when no longer needed.
+using `BeepPlayer.load`, otherwise it will silently fail. Don't forget to unload it when no longer needed.
 
 Example:
 ```dart
